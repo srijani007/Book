@@ -1,0 +1,42 @@
+<p>book-browse works!</p>
+<div class='card-header'>
+    <div class='card-body'>
+        <div class='row'>
+            <div class='col-md-2'>
+                <h4>Book fare</h4>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>Book Filter by :
+                <div class='col-md-4'>
+                    <input type='text' />
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf='books.length'>
+                <thead>
+                    <th><button class="btn btn-primary">
+                        Show logo
+                    </button></th>
+                   <!--<th> bookLogo</th>--> 
+                    <th> bookId </th>
+                    <th> bookName </th>
+                    <th> bookAuthor </th>
+                    <th> bookPrice</th>
+                    <th> bookCategory</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of books">
+                        <td><img [src]="book.bookLogo" [title]="book.bookName" [style.width.px]="imgWidth"
+                                [style.margin.px]="imgMargin" /> </td>
+                        <td>{{book.bookId}}</td>
+                        <td>{{book.bookName}}</td>
+                        <td>{{book.bookAuthor}}</td>
+                        <td>{{book.bookPrice}}</td>
+                        <td>{{book.bookCategory}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
